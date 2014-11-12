@@ -3,7 +3,13 @@ PHP Telnet Client
 
 Simple PHP Telnet Client based on the Python example telnet client (http://www.binarytides.com/code-telnet-client-sockets-python/). 
 
+** Example HTTP Request **
+
 ![alt tag](http://g.recordit.co/cS1let15Y4.gif)
+
+** Example Sending Email via SMTP **
+
+![alt tag](http://g.recordit.co/hhEEKVUm0D.gif)
 
 Install
 =======
