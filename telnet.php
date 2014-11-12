@@ -33,7 +33,7 @@ function telnet() {
                 // incoming message from remote server
                 if ($sock == $s) {
                     if (!$data = stream_get_contents($s)) {
-                        echo 'Connection closed';
+                        die('Connection closed');
                      } else {
                         fputs(STDOUT, $data); // print data
                     }
