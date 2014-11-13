@@ -10,11 +10,11 @@ Features
 * Encrypted protocols, eg: ssl, tls, sslv3, sslv2
 * Scriptable input. Execute your input via shell or PHP interpreter
 
-* Example HTTP Request
+*Example HTTP Request*
 
 ![alt tag](http://g.recordit.co/cS1let15Y4.gif)
 
-* Example Sending Email via SMTP
+*Example Sending Email via SMTP*
 
 ![alt tag](http://g.recordit.co/hhEEKVUm0D.gif)
 
