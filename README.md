@@ -32,6 +32,12 @@ Open your command line client/shell/terminal etc.
 
 `php telnet.php google.com 80`
 
+*Example using ssl to connect to an IMAP server*
+
+`php telnet.php imap.gmail.com 993 ssl`
+
+The telnet program supports any of the protocols that php sockets supports. This depeds on your PHP install but is normally:  tcp, udp, ssl, sslv3, sslv2, tls
+
 Requirements
 --------
 
