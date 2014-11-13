@@ -1,7 +1,14 @@
 #!/usr/bin/env php
 
 <?php
-// telnet program example 
+/**
+ * Command line telnet client in PHP with support for encrypted connections
+ * 
+ * @author gabe@fijiwebdesign.com
+ * @link http://github.com/fijiwebdesign/php-telnet
+ * @license MIT
+ * 
+ */
  
 // main function
 function telnet() {

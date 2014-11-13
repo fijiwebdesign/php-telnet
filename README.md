@@ -3,11 +3,11 @@ PHP Telnet Client
 
 Simple PHP Telnet Client. Supports any socket/stream protocols that PHP supports including encrypted connections. 
 
-* Example HTTP Request *
+* Example HTTP Request
 
 ![alt tag](http://g.recordit.co/cS1let15Y4.gif)
 
-* Example Sending Email via SMTP *
+* Example Sending Email via SMTP
 
 ![alt tag](http://g.recordit.co/hhEEKVUm0D.gif)
 
