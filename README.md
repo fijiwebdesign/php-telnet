@@ -53,6 +53,9 @@ cat http.txt
 
 ```
 
+This is equivalent to `cat http.txt | php telnet.php localhost 80 tcp shell`
+
+
 Requirements
 --------
 
