@@ -1,13 +1,13 @@
 PHP Telnet Client
 ==========
 
-Simple PHP Telnet Client based on the Python example telnet client (http://www.binarytides.com/code-telnet-client-sockets-python/). 
+Simple PHP Telnet Client. Supports any socket/stream protocols that PHP supports including encrypted connections. 
 
-** Example HTTP Request **
+* Example HTTP Request *
 
 ![alt tag](http://g.recordit.co/cS1let15Y4.gif)
 
-** Example Sending Email via SMTP **
+* Example Sending Email via SMTP *
 
 ![alt tag](http://g.recordit.co/hhEEKVUm0D.gif)
 
@@ -42,3 +42,8 @@ Requirements
 --------
 
 You'll need PHP with sockets support
+
+About
+-----
+
+Based initially on the python example from http://www.binarytides.com/code-telnet-client-sockets-python with additions to support encryption and other tcp based protocols. 
