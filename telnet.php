@@ -15,23 +15,14 @@ function telnet() {
     global $argv, $argc;
      
     if ($argc < 3) :
-        die('
-    Usage : 
-        php ' . $argv[0] . ' hostname port [protocol]
-                hostname    - Host domain or IP to connect to
-                port        - Port number to connect to
-                protocol    - Optional protocol to use. Options: ' . implode(', ', stream_get_transports()) . '. Default is tcp.
-
-    Example: 
-        Telnet to Gmail imap server
-                php ' . $argv[0] . ' imap.gmail.com 993 ssl
-
-            ');
+        die(usage());
     endif;
      
+    // auguments
     $host = $argv[1];
     $port = (int) $argv[2];
     $protocol = isset($argv[3]) ? $argv[3] : 'tcp';
+    $execute = isset($argv[4]) ? $argv[4] : false;
     
     // connecto to host
     if (!$s = @fsockopen($protocol . '://' . $host, $port, $errno, $errstr)) {
@@ -67,12 +58,49 @@ function telnet() {
                 // user entered a message
                 else {
                     $msg = fgets($sock);
+                    if ($execute) {
+                        $msg = execute($msg, $execute);
+                    }
+                    echo $execute . ">> $msg\n";
                     fputs($s, $msg);
                 }
             }
         } else {
             die('Error reading from socket');
         }
+    }
+}
+
+// usage text
+function usage() {
+    global $argv;
+
+    return '
+    Usage : 
+        php ' . $argv[0] . ' hostname port [protocol] [execute]
+                hostname    - Host domain or IP to connect to
+                port        - Port number to connect to
+                protocol    - Optional protocol to use. Options: ' . implode(', ', stream_get_transports()) . '. Default is tcp.
+                execute     - Execute input using PHP interpreter or Shell. Options: php, shell
+
+    Example: 
+        Telnet to Gmail imap server
+                php ' . $argv[0] . ' imap.gmail.com 993 ssl
+
+        Telnet to localhost http server and execute input with php interpreter
+                php ' . $argv[0] . ' localhost 80
+
+            ' . PHP_EOL;
+}
+
+function execute($msg, $exec) {
+    if (strtolower($exec) == 'php') {
+        ob_start();
+        eval($msg);
+        return ob_get_clean();
+    }
+    if (strtolower($exec) == 'shell') {
+        return shell_exec($msg);
     }
 }
 

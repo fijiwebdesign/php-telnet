@@ -1,0 +1,10 @@
+helo example.com
+mail from: user@example.com
+rcpt to: user@example.com
+DATA
+subject: Test Email
+
+Email from php shell
+.
+
+
