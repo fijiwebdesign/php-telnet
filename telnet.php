@@ -61,7 +61,6 @@ function telnet() {
                     if ($execute) {
                         $msg = execute($msg, $execute);
                     }
-                    echo $execute . ">> $msg\n";
                     fputs($s, $msg);
                 }
             }
