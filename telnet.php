@@ -40,12 +40,14 @@ function telnet() {
      
     while (true) {
 
-        $socket_list = array($s, STDIN);
+        $read_sockets = array($s, STDIN);
+        $write_sockets = null;
+        $error_sockets = null;
          
         // Get the list sockets which are readable
-        if (stream_select($socket_list , $write_sockets, $error_sockets, null) !== false) {
+        if (stream_select($read_sockets, $write_sockets, $error_sockets, null) !== false) {
         
-            foreach ($socket_list as $sock) {
+            foreach ($read_sockets as $sock) {
 
                 // incoming message from remote server
                 if ($sock == $s) {
